@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bright Studio</title>
+    <style>
+      :root {
+        --bg: #07131f;
+        --panel: #10233a;
+        --text: #f5f7fb;
+        --muted: #9fb0c4;
+        --accent: #5eead4;
+        --accent-2: #8b5cf6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, var(--bg), #182c43);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0 40px;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      nav a {
+        color: var(--muted);
+        margin-left: 20px;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        padding: 40px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.3rem);
+        line-height: 1.1;
+        margin: 0 0 16px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin: 0 0 24px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: white;
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.05);
+      }
+
+      .card {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        padding: 24px;
+        border-radius: 24px;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+        backdrop-filter: blur(10px);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .stats div {
+        background: rgba(255,255,255,0.05);
+        border-radius: 16px;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .stats strong {
+        display: block;
+        font-size: 1.15rem;
+        color: var(--accent);
+      }
+
+      section {
+        padding: 24px 0 8px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .feature {
+        padding: 20px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.05);
+      }
+
+      .feature h3 {
+        margin-top: 0;
+      }
+
+      footer {
+        padding: 36px 0 20px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 800px) {
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        nav a {
+          margin-left: 0;
+          margin-right: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">Bright Studio</div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <h1>Designing thoughtful digital experiences.</h1>
+            <p>We help startups and teams launch bold products with elegant interfaces, clear messaging, and reliable execution.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#contact">Start a project</a>
+              <a class="btn btn-secondary" href="#services">Explore services</a>
+            </div>
+            <div class="stats">
+              <div><strong>12+</strong>Launches</div>
+              <div><strong>98%</strong>Retention</div>
+              <div><strong>24/7</strong>Support</div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Why teams choose us</h3>
+            <p>From strategy to launch, we turn ideas into polished digital products that feel effortless to use.</p>
+            <ul>
+              <li>Fast, collaborative delivery</li>
+              <li>Modern, responsive design</li>
+              <li>Clear communication at every step</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="services">
+          <div class="grid">
+            <div class="feature">
+              <h3>Brand Strategy</h3>
+              <p>Shape a clear identity and story that resonates with your audience.</p>
+            </div>
+            <div class="feature">
+              <h3>Web Design</h3>
+              <p>Craft modern interfaces that feel intuitive, polished, and memorable.</p>
+            </div>
+            <div class="feature">
+              <h3>Product Launch</h3>
+              <p>Bring your idea to life with a smooth rollout and thoughtful support.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact">
+        <p>hello@brightstudio.example</p>
+      </footer>
+    </div>
+  </body>
+</html>
